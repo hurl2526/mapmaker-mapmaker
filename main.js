@@ -66,11 +66,15 @@ console.log(upperCaseFirstLetters(['collin','patrick',]));
 function add1ToLeft(numberArray) {
   let one = [];
   for (let i = 0; i < numberArray.length; i++){
+    if (numberArray[i] >= 0){
    one.push('1' + numberArray[i]);
+  } else if (numberArray[i] < 0){
+    one.push(('1' + (Math.abs(numberArray[i]))) * -1);
   }
+}
   return one;
 }
-console.log(add1ToLeft(['1', '2', '30','400']));
+console.log(add1ToLeft(['1', '2', '-30','400']));
 
 
 
