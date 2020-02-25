@@ -63,8 +63,15 @@ function upperCaseFirstLetters(wordsArray) {
 }
 console.log(upperCaseFirstLetters(['collin','patrick',]));
 
-function add1ToLeft() {
+function add1ToLeft(numberArray) {
+  let one = [];
+  for (let i = 0; i < numberArray.length; i++){
+   one.push('1' + numberArray[i]);
+  }
+  return one;
 }
+console.log(add1ToLeft(['1', '2', '30','400']));
+
 
 
 module.exports = {
