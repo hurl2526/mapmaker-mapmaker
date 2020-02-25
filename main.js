@@ -42,7 +42,7 @@ console.log(changeToInitials(['Colin Jaffe', 'Patrick Hurley']))
 function doubleOdd(numberArray) {
   let odds = [];
   for (let i = 0; i < numberArray.length; i++){
-    if (numberArray[i] % 2 === 1)
+    if (Math.abs(numberArray[i]) % 2 === 1)
     {odds.push(numberArray[i] * 2);}
    else {
     odds.push(numberArray[i]);
@@ -50,14 +50,14 @@ function doubleOdd(numberArray) {
 }
 return odds;
 }
-console.log(doubleOdd([1, 2, 3, 4, 101, 0, 32.5]));
+console.log(doubleOdd([1, 2, 3, 4, 101, -5, 0, 32.5]));
 
 
 
 function upperCaseFirstLetters(wordsArray) {
   let firstCap = [];
   for (let i = 0; i < wordsArray.length; i++){
-  firstCap.push(wordsArray[i][0].toUpperCase() + wordsArray[i].slice(1));
+  firstCap.push(wordsArray[i][0].toUpperCase() + wordsArray[i].slice(1).toLowerCase());
   }
   return firstCap;
 }
@@ -67,14 +67,14 @@ function add1ToLeft(numberArray) {
   let one = [];
   for (let i = 0; i < numberArray.length; i++){
     if (numberArray[i] >= 0){
-   one.push('1' + numberArray[i]);
+   one.push(Number('1' + numberArray[i]));
   } else if (numberArray[i] < 0){
     one.push(('1' + (Math.abs(numberArray[i]))) * -1);
   }
 }
   return one;
 }
-console.log(add1ToLeft(['1', '2', '-30','400']));
+console.log(add1ToLeft([1,2,3,-30]));
 
 
 
